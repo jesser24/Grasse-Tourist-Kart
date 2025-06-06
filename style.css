@@ -797,7 +797,7 @@ body.dark-mode input[type="submit"]:hover {
   transition: 0.4s;}
     @media (max-width: 768px) {
   .card-front img {
-    height: 300px; /* ou une autre valeur selon ton besoin */
+    height: 370px; /* ou une autre valeur selon ton besoin */
     width: 370px;
     object-fit: cover;
   }
@@ -808,6 +808,6 @@ body.dark-mode input[type="submit"]:hover {
 
   .card-front,
   .card-back {
-    height: 300px; /* doit matcher l’image pour bien s’aligner */
+    height: 370px; /* doit matcher l’image pour bien s’aligner */
   }
 }
