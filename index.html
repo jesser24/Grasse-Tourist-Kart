@@ -140,6 +140,12 @@
         <a href="#formTitle" class="btn-reserver" id="cardBtn4">Réserver</a>
       </div>
     </div>
+    <div class="tarif-dots" id="tarif-dots">
+  <span class="dot active"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
   </section>
 
   <section class="content fade">
@@ -658,5 +664,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   </script>
+  <script>
+const tarifSlider = document.getElementById("tarif-slider");
+const tarifDots = document.querySelectorAll("#tarif-dots .dot");
+
+tarifSlider.addEventListener("scroll", () => {
+  const index = Math.round(tarifSlider.scrollLeft / tarifSlider.clientWidth);
+  tarifDots.forEach(dot => dot.classList.remove("active"));
+  if (tarifDots[index]) {
+    tarifDots[index].classList.add("active");
+  }
+});
+</script>
 </body>
 </html>
