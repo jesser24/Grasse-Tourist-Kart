@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Inscription / Connexion</title>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <style>
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        .toggle-link {
+            text-align: center;
+            margin-top: 15px;
+            display: block;
+            cursor: pointer;
+            color: #007BFF;
+        }
+
+        .toggle-link:hover {
+            text-decoration: underline;
+        }
+
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #signup-form, #login-form {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Mode sombre */
+        body.dark-mode {
+            background-color: #121212;
+            color: #eee;
+        }
+
+        body.dark-mode input,
+        body.dark-mode label {
+            color: #eee;
+        }
+
+        body.dark-mode .container {
+            background-color: #1e1e1e;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+        }
+
+        body.dark-mode input[type="text"],
+        body.dark-mode input[type="email"],
+        body.dark-mode input[type="password"] {
+            background-color: #333;
+            border-color: #866b6b;
+            color: #eee;
+        }
+
+        .darkModeToggle {
+            position: fixed;
+            top: 10px;
+            right: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        #lang-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+            padding: 5px 10px;
+            cursor: pointer;
+            z-index: 1000;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <div id="lang-toggle" onclick="toggleLanguage()">EN</div>
+    <div id="darkModeToggle" class="darkModeToggle" onclick="toggleDarkMode()">⏾</div>
+
+    <div class="container" id="form-container">
+        <!-- Formulaire d'Inscription -->
+        <div id="signup-form">
+            <h2>Inscription</h2>
+            <form action="process_inscription.php" method="POST" id="signup-form-action">
+                <div class="form-group">
+                    <label for="name">Nom complet</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Adresse e-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" required>
+                    <div id="password-strength" style="height: 8px; background: #ddd; border-radius: 4px; margin-top: 5px;">
+                        <div id="password-strength-bar" style="height: 8px; width: 0%; background: red; border-radius: 4px;"></div>
+                    </div>
+                    <p id="password-strength-text" style="font-size: 14px; margin-top: 5px;"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirmer le mot de passe</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+
+                <div id="error-message" class="error"></div>
+
+                <div class="form-group">
+                    <input type="submit" value="S'inscrire">
+                </div>
+
+                <p class="toggle-link" onclick="toggleForm('login')">Déjà un compte ? Se connecter</p>
+            </form>
+        </div>
+
+        <!-- Formulaire de Connexion -->
+        <div id="login-form" style="display: none;">
+            <h2>Connexion</h2>
+            <form action="process_connexion.php" method="POST" id="login-form-action">
+                <div class="form-group">
+                    <label for="login-email">Adresse e-mail</label>
+                    <input type="email" id="login-email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="login-password">Mot de passe</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Se connecter">
+                </div>
+
+                <p class="toggle-link" onclick="toggleForm('signup')">Pas de compte ? S'inscrire</p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Gestion mot de passe fort
+        const passwordInput = document.getElementById('password');
+        const strengthBar = document.getElementById('password-strength-bar');
+        const strengthText = document.getElementById('password-strength-text');
+
+        passwordInput.addEventListener('input', () => {
+            const val = passwordInput.value;
+            let strength = 0;
+
+            if(val.length >= 8) strength += 1;
+            if(/[A-Z]/.test(val)) strength += 1;
+            if(/[0-9]/.test(val)) strength += 1;
+            if(/[^A-Za-z0-9]/.test(val)) strength += 1;
+
+            switch(strength) {
+                case 0:
+                    strengthBar.style.width = '0%';
+                    strengthBar.style.background = 'red';
+                    strengthText.textContent = '';
+                    break;
+                case 1:
+                    strengthBar.style.width = '25%';
+                    strengthBar.style.background = 'red';
+                    strengthText.textContent = 'Très faible';
+                    break;
+                case 2:
+                    strengthBar.style.width = '50%';
+                    strengthBar.style.background = 'orange';
+                    strengthText.textContent = 'Faible';
+                    break;
+                case 3:
+                    strengthBar.style.width = '75%';
+                    strengthBar.style.background = 'yellowgreen';
+                    strengthText.textContent = 'Moyen';
+                    break;
+                case 4:
+                    strengthBar.style.width = '100%';
+                    strengthBar.style.background = 'green';
+                    strengthText.textContent = 'Fort';
+                    break;
+            }
+        });
+
+        // Changement formulaire
+        function toggleForm(formType) {
+            const signupForm = document.getElementById('signup-form');
+            const loginForm = document.getElementById('login-form');
+
+            if (formType === 'signup') {
+                loginForm.classList.add('fade-out');
+                setTimeout(() => {
+                    loginForm.style.display = 'none';
+                    signupForm.style.display = 'block';
+                    loginForm.classList.remove('fade-out');
+                }, 300);
+            } else {
+                signupForm.classList.add('fade-out');
+                setTimeout(() => {
+                    signupForm.style.display = 'none';
+                    loginForm.style.display = 'block';
+                    signupForm.classList.remove('fade-out');
+                }, 300);
+            }
+        }
+
+        // Traduction
+        let currentLanguage = 'fr';
+        const translations = {
+            signup: {
+                title: { fr: "Inscription", en: "Sign Up" },
+                name: { fr: "Nom complet", en: "Full Name" },
+                email: { fr: "Adresse e-mail", en: "Email Address" },
+                password: { fr: "Mot de passe", en: "Password" },
+                confirmPassword: { fr: "Confirmer le mot de passe", en: "Confirm Password" },
+                submit: { fr: "S'inscrire", en: "Sign Up" },
+                toggle: { fr: "Déjà un compte ? Se connecter", en: "Already have an account? Log In" }
+            },
+            login: {
+                title: { fr: "Connexion", en: "Login" },
+                email: { fr: "Adresse e-mail", en: "Email Address" },
+                password: { fr: "Mot de passe", en: "Password" },
+                submit: { fr: "Se connecter", en: "Log In" },
+                toggle: { fr: "Pas de compte ? S'inscrire", en: "No account? Sign Up" }
+            }
+        };
+
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'fr' ? 'en' : 'fr';
+            document.getElementById('lang-toggle').textContent = currentLanguage === 'fr' ? 'EN' : 'FR';
+
+            // Inscription
+            document.querySelector('#signup-form h2').textContent = translations.signup.title[currentLanguage];
+            document.querySelector('label[for="name"]').textContent = translations.signup.name[currentLanguage];
+            document.querySelector('label[for="email"]').textContent = translations.signup.email[currentLanguage];
+            document.querySelector('label[for="password"]').textContent = translations.signup.password[currentLanguage];
+            document.querySelector('label[for="confirm-password"]').textContent = translations.signup.confirmPassword[currentLanguage];
+            document.querySelector('#signup-form input[type="submit"]').value = translations.signup.submit[currentLanguage];
+            document.querySelector('#signup-form .toggle-link').textContent = translations.signup.toggle[currentLanguage];
+
+            // Connexion
+            document.querySelector('#login-form h2').textContent = translations.login.title[currentLanguage];
+            document.querySelector('label[for="login-email"]').textContent = translations.login.email[currentLanguage];
+            document.querySelector('label[for="login-password"]').textContent = translations.login.password[currentLanguage];
+            document.querySelector('#login-form input[type="submit"]').value = translations.login.submit[currentLanguage];
+            document.querySelector('#login-form .toggle-link').textContent = translations.login.toggle[currentLanguage];
+        }
+
+        // Particules
+        particlesJS('particles-js', {
+            
+            particles: {
+                number: { value: 50, density: { enable: true, value_area: 800 } },
+                color: { value: "#4CAF50" },
+                shape: { type: "circle" },
+                opacity: { value: 0.6 },
+                size: { value: 3, random: true },
+                move: { enable: true, speed: 2, direction: "none", random: true, straight: false }
+            },
+            interactivity: {
+                events: {
+                    onhover: { enable: true, mode: "repulse" },
+                    onclick: { enable: true, mode: "push" }
+                },
+                modes: {
+                    repulse: { distance: 100 },
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
+
+        // Mode sombre
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('dark-mode', isDark ? 'enabled' : 'disabled');
+            document.getElementById('darkModeToggle').textContent = isDark ? '☀︎' : '⏾';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('dark-mode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+                document.getElementById('darkModeToggle').textContent = '☀︎';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kart Touristique Grasse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@300;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="particles-js"></div>
+
+  <header>
+  <h1 id="title">Kart Touristique Grasse</h1>
+  <div>
+    <div class="burger-toggle" id="burger-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
+    <ul class="burger-menu" id="burger-menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="#formTitle">Réservation</a></li>
+      <li><a href="histoire.html">Histoire</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="inscri.html">Inscription</a></li>
+      
+    </ul>
+    </div>
+  <div class="header-buttons">
+    <button onclick="switchLang()" id="langBtn">EN</button>
+
+  </div>
+      <div id="darkModeToggle" class="darkModeToggle">
+      <span class="icon moon">☾</span>
+      <span class="icon sun" style="display:none;">☀︎</span>
+    </div>
+</header>
+
+</div>
+  <div class="navbar">
+    <ul class="menu">
+      <li><a href="index.html" id="navHome">Accueil</a></li>
+      <li><a href="#formTitle" id="navReservation">Réservation</a></li>
+      <li><a href="histoire.html" id="navHistory">Histoire</a></li>
+      <li><a href="faq.html" id="navFAQ">FAQ</a></li>
+    </ul>
+    <a href="inscri.html">
+      <button class="signup-btn" id="signupBtn">Inscription</button>
+    </a>
+    
+  </div>
+  
+  </div>
+  
+  <section class="hero">
+    <div id="heroText">Explorez Grasse en Kart</div>
+  </section>
+
+  <section class="content fade">
+    <h2 id="welcome">Bienvenue</h2>
+    <p id="description">Bienvenue sur Kart Touristique Grasse – une nouvelle façon, ludique, écologique et innovante, de
+      découvrir la capitale mondiale du parfum à bord de nos karts électriques !</p>
+    <button class="cta-button" id="reserveBtn">Réservez maintenant</button>
+  </section>
+
+  <section class="content fade">
+    <div class="concept-section">
+      <div class="text-content">
+        <h2 id="conceptTitle">Notre Concept</h2>
+        <p id="conceptDescription"> Inspiré du célèbre Mario Kart de Tokyo et du charme du train touristique de Grasse,
+          notre concept révolutionne la visite urbaine. Nous proposons des karts électriques individuels, silencieux et
+          100 % écologiques, permettant aux visiteurs de découvrir Grasse de manière ludique, autonome et respectueuse
+          de l’environnement. Que vous soyez touriste ou habitant, c’est une nouvelle manière de redécouvrir les
+          ruelles, les parfumeries emblématiques, les panoramas et le patrimoine historique de la ville, tout en
+          s’amusant.</p>
+      </div>
+      <div class="image-content">
+        <img src="kart grasse.jpeg" alt="Kart Touristique Grasse" />
+      </div>
+    </div>
+  </section>
+
+  <section class="content fade tarif-scroll">
+    <h2>Nos Tarifs Abordables</h2>
+    <div class="tarif-scroll-container">
+
+      <!-- Solo -->
+      <div class="tarif-card">
+        <img src="Kart SOLO.png" alt="Forfait Solo" class="tarif-image">
+        <h3 id="cardTitle1">Forfait Solo</h3>
+        <p class="price" id="cardPrice1">39,99€/Heure</p>
+        <p class="assurance" id="cardAssurance1">Assurance incluse</p>
+        <a href="#formTitle" class="btn-reserver" id="cardBtn1">Réserver</a>
+      </div>
+
+      <!-- Couple -->
+      <div class="tarif-card">
+        <img src="kart couple.png" alt="Forfait Couple" class="tarif-image">
+        <h3 id="cardTitle2">Forfait Couple</h3>
+        <p class="price" id="cardPrice2">34,99€/Heure</p>
+        <p class="assurance" id="cardAssurance2">Assurance incluse</p>
+        <a href="#formTitle" class="btn-reserver" id="cardBtn2">Réserver</a>
+      </div>
+
+      <!-- Famille -->
+      <div class="tarif-card">
+        <img src="kart famille.jpg" alt="Forfait Famille" class="tarif-image">
+        <h3 id="cardTitle3">Forfait Famille</h3>
+        <p class="price" id="cardPrice3">29,99€/Heure</p>
+        <p class="assurance" id="cardAssurance3">Assurance incluse</p>
+        <a href="#formTitle" class="btn-reserver" id="cardBtn3">Réserver</a>
+      </div>
+
+      <!-- Groupe -->
+      <div class="tarif-card">
+        <img src="kart groupe.png" alt="Forfait Groupe" class="tarif-image">
+        <h3 id="cardTitle4">Forfait Groupe</h3>
+        <p class="price" id="cardPrice4">19,99€/Heure</p>
+        <p class="assurance" id="cardAssurance4">Assurance incluse</p>
+        <a href="#formTitle" class="btn-reserver" id="cardBtn4">Réserver</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="content fade">
+    <h2 id="formTitle">Réservation</h2>
+    <form id="bookingForm">
+      <input type="text" id="name" placeholder="Nom" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="date" id="date" required />
+      <input type="number" id="people" placeholder="Nombre de personnes" min="1" required />
+      <textarea id="message" placeholder="Message ou demande spéciale" rows="4"></textarea>
+      <button class="cta-button" type="submit" id="submitBtn">Envoyer</button>
+      <div class="confirmation" id="confirmationMsg" style="display: none;">Merci pour votre réservation !</div>
+    </form>
+  </section>
+  <section class="gallery fade">
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="fragonard.jpg" alt="Parfumerie Fragonard">
+        </div>
+        <div class="card-back">
+          <div class="card-back-bg" style="background-image: url('fragonard.jpg');"></div>
+          <p id="im1">Usine et boutique Fragonard : Découvrez l’univers du parfum à travers la célèbre usine Fragonard,
+            symbole du savoir-faire grassois.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="musee.webp" alt="Musée de la Parfumerie">
+        </div>
+        <div class="card-back">
+          <div class="card-back-bg" style="background-image: url('musee.webp');"></div>
+          <p id="im2">Musée de Grasse : Plongez dans l’histoire locale en explorant les charmantes ruelles menant au
+            musée de Grasse.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="vieux grasse.webp" alt="Vieille Ville de Grasse">
+        </div>
+        <div class="card-back">
+          <div class="card-back-bg" style="background-image: url('vieux grasse.webp');"></div>
+          <p id="im3">Fontaine et parapluies suspendus : Un coin poétique de Grasse, où une fontaine ancienne rencontre
+            une installation artistique colorée.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Grasse2.webp" alt="Cathédrale Notre-Dame-du-Puy">
+        </div>
+        <div class="card-back">
+          <div class="card-back-bg" style="background-image: url('Grasse2.webp');"></div>
+          <p id="im4">Vieux Grasse : Baladez-vous dans les ruelles authentiques du Vieux Grasse, riches de charme et
+            d’histoire.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Grasse3.webp" alt="Vue panoramique sur Grasse">
+        </div>
+        <div class="card-back">
+          <div class="card-back-bg" style="background-image: url('Grasse3.webp');"></div>
+          <p id="im5">Rue aux parapluies roses : Laissez-vous surprendre par cette rue emblématique décorée de
+            parapluies flottants, un clin d'œil artistique au cœur de la ville.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Grasse4.webp" alt="Fontaine à Grasse">
+        </div>
+        <div class="card-back">
+          <div class="card-back-bg" style="background-image: url('Grasse4.webp');"></div>
+          <p id="im6">Promenade centrale bordée de palmiers : Profitez de l’ambiance méditerranéenne le long de cette
+            avenue animée et ensoleillée de Grasse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="map-container fade">
+    <div class="map-wrapper">
+      <iframe src="https://www.google.com/maps?q=Grasse+Campus+-+ECAM+EPMI&output=embed" width="100%" height="100%"
+        style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+  </section>
+<!-- AOS CSS (dans <head>) -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<section id="testimonials" style="padding: 40px; background:#f9f9f9; border-radius: 20px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); margin: 40px;">
+  <h2 style="text-align:center; margin-bottom: 30px;color: black;">Témoignages et avis utilisateurs</h2>
+  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: nowrap; overflow-x: auto;color: black;">
+
+    <!-- Avis 1 -->
+    <div data-aos="fade-up" data-aos-delay="0" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
+      <img src="jesser.png" alt="Profil Jesser" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
+      <h3 style="margin: 8px 0 5px;">Jesser</h3>
+      <div style="color: #f5a623; font-size: 18px;">★★★★☆</div>
+      <p style="font-style: italic; font-size: 14px; color: #555;">
+        Nous sommes reconnaissants envers nos professeurs qui ont su transmettre leur savoir avec passion et ont rendu cette aventure éducative mémorable. 
+      </p>
+    </div>
+
+    <!-- Avis 2 -->
+    <div data-aos="fade-up" data-aos-delay="100" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
+      <img src="ethan.png" alt="Profil Ethan" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
+      <h3 style="margin: 8px 0 5px;">Ethan</h3>
+      <div style="color: #f5a623; font-size: 18px;">★★★★★</div>
+      <p style="font-style: italic; font-size: 14px; color: #555;">
+        Grâce à l’encadrement de nos enseignants, nous avons pu apprendre et grandir tout au long de ce projet, une expérience enrichissante.
+      </p>
+    </div>
+
+    <!-- Avis 3 -->
+    <div data-aos="fade-up" data-aos-delay="200" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
+      <img src="sohan.png" alt="Profil Sohan" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
+      <h3 style="margin: 8px 0 5px;">Sohan</h3>
+      <div style="color: #f5a623; font-size: 18px;">★★★☆☆</div>
+      <p style="font-style: italic; font-size: 14px; color: #555;">
+        Notre école est un lieu d’inspiration et d’opportunités, où chaque défi est une chance d’apprendre, merci à tous nos professeurs de nous guider.
+      </p>
+    </div>
+
+    <!-- Avis 4 -->
+    <div data-aos="fade-up" data-aos-delay="300" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
+      <img src="mohamed.png" alt="Profil Mohamed" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
+      <h3 style="margin: 8px 0 5px;">Mohamed</h3>
+      <div style="color: #f5a623; font-size: 18px;">★★★★★</div>
+      <p style="font-style: italic; font-size: 14px; color: #555;">
+         Ce projet est le fruit de l’excellence pédagogique de notre établissement et de l’investissement sans faille de nos professeurs. 
+      </p>
+    </div>
+
+    <!-- Avis 5 -->
+    <div data-aos="fade-up" data-aos-delay="400" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
+      <img src="thomas.png.lnk" alt="Profil Thomas" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
+      <h3 style="margin: 8px 0 5px;">Thomas</h3>
+      <div style="color: #f5a623; font-size: 18px;">★★★★☆</div>
+      <p style="font-style: italic; font-size: 14px; color: #555;">
+        Merci à nos professeurs pour leur patience et leur soutien constant, qui nous ont permis de mener à bien ce projet avec passion. 
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- AOS JS (avant </body>) -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+ <section class="help-section">
+    <h2 id="aide"><strong>Besoin de plus de détail&nbsp;?</strong></h2>
+    <p id="aide1">Nous sommes là pour répondre à toutes vos questions.</p>
+    <div class="help-buttons">
+      <a href="contact.html">
+        <button id="aide2" class="contact-btn">Contactez Nous</button>
+      </a>
+      <a href="https://www.paysdegrassetourisme.fr/">
+        <button id="aide3" class="faq-btn">Site Officiel De L'office Du Tourisme De Grasse</button>
+      </a>
+    </div>
+  </section>
+  <footer id="footer">
+    &copy; 2025 Kart Touristique Grasse - ECAM EPMI x Grasse Campus x Office De Tourisme De Grasse
+  </footer>
+
+  <!-- Traduction JavaScript corrigée -->
+  <script>
+    const translations = {
+      fr: {
+        title: "Kart Touristique Grasse",
+        welcome: "Bienvenue",
+        description: "Bienvenue sur Kart Touristique Grasse – une nouvelle façon, ludique, écologique et innovante, de découvrir la capitale mondiale du parfum à bord de nos karts électriques !",
+        reserveBtn: "Réservez maintenant",
+        langBtn: "EN",
+        heroText: "Explorez Grasse en Kart",
+        formTitle: "Réservation",
+        conceptTitle: "Notre Concept",
+        conceptDescription: " Inspiré du célèbre Mario Kart de Tokyo et du charme du train touristique de Grasse, notre concept révolutionne la visite urbaine. Nous proposons des karts électriques individuels, silencieux et 100 % écologiques, permettant aux visiteurs de découvrir Grasse de manière ludique, autonome et respectueuse de l’environnement. Que vous soyez touriste ou habitant, c’est une nouvelle manière de redécouvrir les ruelles, les parfumeries emblématiques, les panoramas et le patrimoine historique de la ville, tout en s’amusant.",
+
+        cardTitle1: "Forfait Solo",
+        cardPrice1: "39,99€/Heure",
+        cardAssurance1: "Assurance incluse",
+        cardBtn1: "Réserver",
+
+        cardTitle2: "Forfait Couple",
+        cardPrice2: "34,99€/Heure",
+        cardAssurance2: "Assurance incluse",
+        cardBtn2: "Réserver",
+
+        cardTitle3: "Forfait Famille",
+        cardPrice3: "29,99€/Heure",
+        cardAssurance3: "Assurance incluse",
+        cardBtn3: "Réserver",
+
+        cardTitle4: "Forfait Groupe",
+        cardPrice4: "19,99€/Heure",
+        cardAssurance4: "Assurance incluse",
+        cardBtn4: "Réserver",
+        aide: "Besoin de plus de détail",
+        aide1: "Nous sommes là pour répondre à toutes vos questions.",
+        aide2: "Contactez Nous",
+        aide3: "Site Officiel De L'office Du Tourisme De Grasse",
+        footer: "2025 Kart Touristique Grasse - ECAM EPMI x Grasse Campus x Office De Tourisme De Grasse",
+
+        im1: "Usine et boutique Fragonard : Découvrez l’univers du parfum à travers la célèbre usine Fragonard, symbole du savoir-faire grassois.",
+        im2: "Musée de Grasse : Plongez dans l’histoire locale en explorant les charmantes ruelles menant au musée de Grasse.",
+        im3: "Fontaine et parapluies suspendus : Un coin poétique de Grasse, où une fontaine ancienne rencontre une installation artistique colorée.",
+        im4: "Vieux Grasse : Baladez-vous dans les ruelles authentiques du Vieux Grasse, riches de charme et d’histoire.",
+        im5: "Rue aux parapluies roses : Laissez-vous surprendre par cette rue emblématique décorée de parapluies flottants, un clin d'œil artistique au cœur de la ville.",
+        im6: "Promenade centrale bordée de palmiers : Profitez de l’ambiance méditerranéenne le long de cette avenue animée et ensoleillée de Grasse.",
+
+        navHome: "Accueil",
+        navFAQ: "FAQ",
+        navReservation: "Réservation",
+        navHistory: "Histoire",
+        signupBtn: "Inscription",
+
+        formNamePlaceholder: "Nom",
+        formEmailPlaceholder: "Email",
+        formDatePlaceholder: "Date", // (optionnel, date n'a pas de placeholder)
+        formPeoplePlaceholder: "Nombre de personnes",
+        formMessagePlaceholder: "Message ou demande spéciale",
+        formSubmitBtn: "Envoyer",
+        formConfirmationMsg: "Merci pour votre réservation !",
+      },
+      en: {
+        title: "Tourist Kart Grasse",
+        welcome: "Welcome",
+        description: "Welcome to Kart Touristique Grasse — a new, fun, eco-friendly, and innovative way to discover the world capital of perfume aboard our electric karts!",
+        reserveBtn: "Book now",
+        langBtn: "FR",
+        heroText: "Explore Grasse by Kart",
+        formTitle: "Booking",
+        conceptTitle: "Our Concept",
+        conceptDescription: "Inspired by the famous Mario Kart from Tokyo and the charm of Grasse’s tourist train, our concept revolutionizes urban sightseeing. We offer individual electric karts that are silent and 100% eco-friendly, allowing visitors to discover Grasse in a fun, independent, and environmentally respectful way. Whether you are a tourist or a local, it’s a new way to rediscover the alleys, iconic perfumeries, panoramas, and historical heritage of the city — all while having fun.",
+
+        cardTitle1: "Solo Package",
+        cardPrice1: "$39.99/Hour",
+        cardAssurance1: "Insurance included",
+        cardBtn1: "Book",
+
+        cardTitle2: "Couple Package",
+        cardPrice2: "$34.99/Hour",
+        cardAssurance2: "Insurance included",
+        cardBtn2: "Book",
+
+        cardTitle3: "Family Package",
+        cardPrice3: "$29.99/Hour",
+        cardAssurance3: "Insurance included",
+        cardBtn3: "Book",
+
+        cardTitle4: "Group Package",
+        cardPrice4: "$19.99/Hour",
+        cardAssurance4: "Insurance included",
+        cardBtn4: "Book",
+        aide: "Need More Details",
+        aide1: "We Are Here To Respond To All Your Questions.",
+        aide2: "Contact Us",
+        aide3: "Official Site Of <<L'office Du Tourisme De Grasse>>",
+        footer: "2025 Touristic Kart Grasse - ECAM EPMI x Grasse Campus x Office De Tourisme De Grasse",
+
+        im1: "Fragonard Factory and Boutique: Discover the world of fragrance at the iconic Fragonard factory, a symbol of Grasse’s perfume-making expertise.",
+        im2: "Grasse Museum: Dive into local history as you stroll through the charming alleys leading to the Grasse museum.",
+        im3: "Fountain and Hanging Umbrellas: A poetic corner of Grasse where a historic fountain meets a colorful artistic installation.",
+        im4: "Old Town of Grasse: Wander through the authentic alleys of Old Grasse, full of charm and heritage.",
+        im5: "Street with Pink Umbrellas: Be enchanted by this iconic street adorned with floating umbrellas a playful artistic touch in the heart of the city.",
+        im6: "Palm-lined Promenade: Enjoy the Mediterranean atmosphere along this sunny, vibrant avenue in central Grasse.",
+
+        navHome: "Home",
+        navFAQ: "FAQ",
+        navReservation: "Reservation",
+        navHistory: "History",
+        signupBtn: "Sign Up",
+
+        formNamePlaceholder: "Name",
+        formEmailPlaceholder: "Email",
+        formDatePlaceholder: "Date",
+        formPeoplePlaceholder: "Number of people",
+        formMessagePlaceholder: "Message or special request",
+        formSubmitBtn: "Send",
+        formConfirmationMsg: "Thank you for your reservation !",
+      }
+    };
+
+    let currentLang = "fr";
+    function switchLang() {
+      currentLang = currentLang === "fr" ? "en" : "fr";
+      const t = translations[currentLang];
+
+      document.getElementById("title").textContent = t.title;
+      document.getElementById("welcome").textContent = t.welcome;
+      document.getElementById("description").textContent = t.description;
+      document.getElementById("reserveBtn").textContent = t.reserveBtn;
+      document.getElementById("langBtn").textContent = t.langBtn;
+      document.getElementById("heroText").textContent = t.heroText;
+      document.getElementById("formTitle").textContent = t.formTitle;
+      document.getElementById("conceptTitle").textContent = t.conceptTitle;
+      document.getElementById("conceptDescription").textContent = t.conceptDescription;
+      document.getElementById("aide").textContent = t.aide;
+      document.getElementById("aide1").textContent = t.aide1;
+      document.getElementById("aide2").textContent = t.aide2;
+      document.getElementById("aide3").textContent = t.aide3;
+      document.getElementById("footer").textContent = t.footer;
+      document.getElementById("im1").textContent = t.im1;
+      document.getElementById("im2").textContent = t.im2;
+      document.getElementById("im3").textContent = t.im3;
+      document.getElementById("im4").textContent = t.im4;
+      document.getElementById("im5").textContent = t.im5;
+      document.getElementById("im6").textContent = t.im6;
+      document.getElementById("navHome").textContent = t.navHome;
+      document.getElementById("navFAQ").textContent = t.navFAQ;
+      document.getElementById("navReservation").textContent = t.navReservation;
+      document.getElementById("navHistory").textContent = t.navHistory;
+      document.getElementById("signupBtn").textContent = t.signupBtn;
+      document.getElementById("name").placeholder = t.formNamePlaceholder;
+      document.getElementById("email").placeholder = t.formEmailPlaceholder;
+      document.getElementById("date").placeholder = t.formDatePlaceholder; // souvent inutile pour input type="date"
+      document.getElementById("people").placeholder = t.formPeoplePlaceholder;
+      document.getElementById("message").placeholder = t.formMessagePlaceholder;
+      document.getElementById("submitBtn").textContent = t.formSubmitBtn;
+      document.getElementById("confirmationMsg").textContent = t.formConfirmationMsg;
+
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById(`cardTitle${i}`).textContent = t[`cardTitle${i}`];
+        document.getElementById(`cardPrice${i}`).textContent = t[`cardPrice${i}`];
+        document.getElementById(`cardAssurance${i}`).textContent = t[`cardAssurance${i}`];
+        document.getElementById(`cardBtn${i}`).textContent = t[`cardBtn${i}`];
+      }
+    }
+    // Scroll animation
+    const fadeEls = document.querySelectorAll('.fade');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Form confirmation
+    document.getElementById("bookingForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("confirmationMsg").style.display = "block";
+      this.reset();
+    });
+  </script>
+
+  <script>
+    window.addEventListener("load", function () {
+      // Initialisation de la hauteur de l'image à 850px au chargement
+      var hero = document.querySelector('.hero');
+      hero.style.height = '850px';  // Valeur initiale de la hauteur
+
+      // Écouteur d'événements pour le défilement
+      window.addEventListener("scroll", function () {
+        var scrollPosition = window.scrollY; // Position actuelle du scroll
+
+        // Limite la hauteur à 600px et augmente jusqu'à 850px
+        var newHeight = 850 - scrollPosition;
+        if (newHeight < 600) {
+          newHeight = 600;  // Limite à 600px
+        }
+
+        // Applique la nouvelle hauteur à l'élément hero
+        hero.style.height = newHeight + 'px';
+      });
+    });
+  </script>
+  <script>
+    const form = document.getElementById('bookingForm');
+    const confirmationMsg = document.getElementById('confirmationMsg');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Affiche le message traduit (déjà mis à jour par switchLang)
+      confirmationMsg.style.display = 'block';
+      confirmationMsg.style.opacity = 1;
+
+      // Disparition progressive après 5 secondes
+      setTimeout(() => {
+        let fadeEffect = setInterval(() => {
+          if (!confirmationMsg.style.opacity) {
+            confirmationMsg.style.opacity = 1;
+          }
+          if (confirmationMsg.style.opacity > 0) {
+            confirmationMsg.style.opacity -= 0.05;
+          } else {
+            clearInterval(fadeEffect);
+            confirmationMsg.style.display = 'none';
+            confirmationMsg.style.opacity = 1; // prêt pour la prochaine fois
+          }
+        }, 50);
+      }, 2000);
+    });
+
+  </script>
+
+  <script>
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('flipped');
+      });
+    });
+  </script>
+
+  <script>
+    particlesJS('particles-js', {
+      "particles": {
+        "number": {
+          "value": 50,
+          "density": { "enable": true, "value_area": 800 }
+        },
+        "color": { "value": "#4CAF50" },
+        "shape": {
+          "type": "circle"
+        },
+        "opacity": {
+          "value": 0.6,
+          "random": false
+        },
+        "size": {
+          "value": 3,
+          "random": true
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": true,
+          "straight": false
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" }
+        },
+        "modes": {
+          "repulse": { "distance": 100 },
+          "push": { "particles_nb": 4 }
+        }
+      },
+      "retina_detect": true
+    });
+
+  </script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const moonIcon = darkModeToggle.querySelector('.moon');
+  const sunIcon = darkModeToggle.querySelector('.sun');
+
+  // Initialisation : appliquer le mode sombre si stocké
+  if (localStorage.getItem('dark-mode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+    moonIcon.style.display = 'none';
+    sunIcon.style.display = 'inline';
+  } else {
+    moonIcon.style.display = 'inline';
+    sunIcon.style.display = 'none';
+  }
+
+  darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    if (document.body.classList.contains('dark-mode')) {
+      moonIcon.style.display = 'none';
+      sunIcon.style.display = 'inline';
+      localStorage.setItem('dark-mode', 'enabled');
+    } else {
+      moonIcon.style.display = 'inline';
+      sunIcon.style.display = 'none';
+      localStorage.setItem('dark-mode', 'disabled');
+    }
+  });
+});
+
+  </script>
+<script>
+  AOS.init({
+    delay: 750, // délai initial (toutes les animations attendent 200ms avant de démarrer)
+    duration: 1500, // durée de l'animation (en ms)
+    once: true // ne s’anime qu’une seule fois (évite de répéter)
+  });
+</script>
+<script>
+   const toggle = document.getElementById('burger-toggle');
+    const menu = document.getElementById('burger-menu');
+
+    toggle.addEventListener('click', () => {
+      if (menu.style.display === 'flex') {
+        menu.style.display = 'none';
+      } else {
+        menu.style.display = 'flex';
+      }
+    });
+  </script>
+</body>
+</html>

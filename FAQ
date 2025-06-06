@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Foire aux questions de Kart Touristique Grasse" />
+  <meta property="og:title" content="FAQ - Kart Touristique Grasse" />
+  <meta property="og:description" content="Consultez les questions fréquemment posées pour obtenir plus d'informations sur nos services de kart." />
+  <meta property="og:image" content="faq-image.jpg" />
+  <meta property="og:type" content="website" />
+  <title>FAQ - Kart Touristique Grasse</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@300;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style1.css" />
+  <link rel="stylesheet" href="faq.css" />
+</head>
+<body>
+  <main>
+    <section class="faq-content">
+      <h2>FAQ - Questions fréquemment posées</h2>
+
+      <!-- Question 1 -->
+      <div class="faq-item">
+        <details>
+          <summary><img src="age.png" alt="Icône âge" /> Quel est l'âge minimum pour conduire un kart ?</summary>
+          <p>Vous devez avoir au moins 16 ans pour conduire un kart, mais les jeunes de moins de 16 ans peuvent participer en tant que passagers avec un adulte.</p>
+        </details>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="faq-item">
+        <details>
+          <summary><img src="icon.png" alt="Icône localisation" /> Où commence le parcours ?</summary>
+          <p>Le parcours commence à la Place aux Aires, en plein centre de Grasse, près des principales attractions touristiques.</p>
+        </details>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="faq-item">
+        <details>
+          <summary><img src="images.jpg" alt="Icône fauteuil roulant" /> Les karts sont-ils accessibles aux personnes handicapées ?</summary>
+          <p>Oui, nos karts sont adaptés pour les personnes à mobilité réduite et sont facilement accessibles grâce à des rampes et des sièges spéciaux.</p>
+        </details>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="faq-item">
+        <details>
+          <summary><img src="montre.png" alt="Icône durée" /> Combien de temps dure une visite en kart ?</summary>
+          <p>La durée de la visite varie selon le parcours choisi, mais en moyenne, une visite dure environ 1 heure.</p>
+        </details>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="faq-item">
+        <details>
+          <summary><img src="calendrier.png" alt="Icône annulation" /> Puis-je annuler ou modifier ma réservation ?</summary>
+          <p>Oui, vous pouvez annuler ou modifier votre réservation jusqu'à 24 heures avant l'heure de départ, sans frais.</p>
+        </details>
+      </div>
+
+      <!-- Question 6 -->
+      <div class="faq-item">
+        <details>
+          <summary><img src="safe.png" alt="Icône sécurité" /> Quels sont les mesures de sécurité ?</summary>
+          <p>La sécurité est notre priorité. Nous fournissons des casques, et les conducteurs et passagers sont informés des règles de sécurité avant chaque départ. Nos karts sont également équipés de systèmes de freinage automatiques.</p>
+        </details>
+      </div>
+
+      <!-- Question 7 -->
+      <div class="faq-item">
+        <details>
+          <summary><img src="age.png" alt="Icône âge" /> Peut-on conduire sans permis de conduire ?</summary>
+          <p>Pas besoin de permis de conduire pour piloter nos karts. Seules les personnes de 16 ans et plus peuvent conduire, et il n'y a pas de prérequis de permis.</p>
+        </details>
+      </div>
+
+      <!-- Image illustrative -->
+      <section class="faq-image">
+        <h3>À propos de nos karts</h3>
+        <img src="" alt="Kart électrique à Grasse" />
+        <p>Découvrez nos karts électriques, silencieux, écologiques et adaptés à tous les types de terrain.</p>
+      </section>
+
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Kart Touristique Grasse - ECAM EPMI x Grasse Campus
+  </footer>
+</body>
+</html>

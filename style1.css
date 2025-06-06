@@ -1,0 +1,151 @@
+/* Style général pour la FAQ */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fefae0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header similaire au site principal */
+  header {
+    background: #606c38;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-top: 1rem;
+  }
+  
+  nav ul li {
+    margin: 0 1rem;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    color: #dda15e;
+  }
+  
+  /* Section FAQ */
+  .faq-content {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .faq-content h2 {
+    font-size: 2rem;
+    color: #606c38;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .faq-item {
+    margin-bottom: 1.5rem;
+  }
+  
+  details summary {
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.8rem;
+    background-color: #dda15e;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s ease;
+    text-align: left;
+    border: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  details summary img {
+    margin-right: 10px;
+    width: 20px;
+  }
+  
+  details summary:hover {
+    background-color: #bc6c25;
+  }
+  
+  details p {
+    margin-top: 0.5rem;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    line-height: 1.5;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .faq-image {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  
+  .faq-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  .faq-image p {
+    font-size: 1.1rem;
+    color: #606c38;
+    margin-top: 1rem;
+  }
+  
+  /* Footer similaire au site principal */
+  footer {
+    background-color: #606c38;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .faq-content {
+      padding: 1.5rem;
+    }
+  
+    header h1 {
+      font-size: 1.6rem;
+    }
+  
+    .faq-content h2 {
+      font-size: 1.8rem;
+    }
+  
+    details summary {
+      font-size: 1rem;
+      padding: 0.6rem;
+    }
+  }
+  
+  

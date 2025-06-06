@@ -1,0 +1,798 @@
+/* ============================= */
+/* STYLES DE BASE */
+/* ============================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fefae0;
+  color: #333;
+}
+
+header {
+  background: #606c38;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Dancing Script', cursive;
+  
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+#langBtn {
+  padding: 0.5rem 1rem;
+  background-color: white;
+  color: #606c38;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#langBtn:hover {
+  background-color: #dda15e;
+}
+
+.hero {
+  position: relative;
+  background-image: url("Grasse.webp");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px #000;
+  transition: height 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-in-out;
+  
+
+}
+
+.fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+  font-size: larger;
+}
+
+.content {
+  padding: 1rem;
+  text-align: center;
+  
+  
+}
+
+.cta-button {
+  margin-top: 2rem;
+  background-color: #dda15e;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.2s;
+}
+
+.cta-button:hover {
+  transform: scale(1.1);
+  background-color: #bc6c25;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.card {
+  width: 350px;
+  height: 380px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 6px 20px 25px rgba(0,0,0,0.2);
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card-front img:hover {
+  transform: scale(1.05);
+}
+
+.card-back {
+  position: relative;
+  transform: rotateY(180deg);
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  background: transparent;
+  backface-visibility: hidden;
+}
+
+.card-back-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  opacity: 0.75;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.card-back p {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  color: #222;
+  font-weight: 600;
+}
+
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+input, textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+
+.map-container {
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  aspect-ratio: 16 / 9;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 15px 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+footer {
+  background-color: #606c38;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.confirmation {
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.concept-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  
+}
+
+.text-content {
+  width: 50%;
+  padding-right: 2rem;
+  font-size: x-large;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.image-content {
+  width: 50%;
+}
+
+.concept-section img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ============================= */
+/* TARIF SCROLLABLE CARDS       */
+/* ============================= */
+
+.tarif-scroll {
+  text-align: center;
+  background: transparent;
+  padding: 2rem 5rem;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.tarif-scroll h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.tarif-scroll-container {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.tarif-scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.tarif-scroll-container::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 4px;
+}
+
+.tarif-card {
+  flex: 0 0 auto;
+  min-width: 250px;
+  max-width: 350px;
+  background: white;
+  border-radius: 20px;
+  padding: 1rem;
+  scroll-snap-align: center;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: scale(0.95);
+  opacity: 0.7;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tarif-card:hover {
+  transform: scale(1.05) rotate(-1deg);
+  opacity: 1;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tarif-card img.tarif-image {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.tarif-card h3 {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.tarif-card p {
+  font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+  color: #555;
+}
+
+.tarif-card .price {
+  font-weight: bold;
+  color: #27ae60;
+  font-size: clamp(1.1rem, 2.5vw, 1.2rem);
+  margin-top: 0.5rem;
+}
+
+.btn-reserver {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #27ae60;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.btn-reserver:hover {
+  background-color: #219150;
+  transform: scale(1.05);
+}
+
+/* ============================= */
+/* RESPONSIVE DESIGN             */
+/* ============================= */
+
+/* TABLETTE : 2 à 3 cartes par ligne */
+@media (min-width: 768px) {
+  .tarif-scroll-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+
+  .tarif-card {
+    flex: 1 1 calc(33.333% - 2rem);
+    max-width: 360px;
+  }
+}
+
+/* DESKTOP LARGE : 4 cartes par ligne */
+@media (min-width: 1200px) {
+  .tarif-card {
+    flex: 1 1 calc(25% - 2rem);
+  }
+}
+
+/* TRÈS PETITS ÉCRANS : largeur carte réduite */
+@media (max-width: 360px) {
+  .tarif-card {
+    min-width: 220px;
+    
+  }
+
+  }
+
+/* ============================= */
+/* SECTIONS D'AIDE */
+/* ============================= */
+
+.help-section {
+  background-color: #e8fff2;
+  padding: 40px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin: 60px 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.help-section h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.help-section p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.help-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-btn,
+.faq-btn {
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.contact-btn {
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.contact-btn:hover {
+  background-color: #eee;
+}
+
+.faq-btn {
+  background-color: #00d26a;
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.faq-btn:hover {
+  background-color: #00b35d;
+}
+
+/* ============================= */
+/* NAVIGATION */
+/* ============================= */
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  color: white;
+  padding: 10px 20px;
+  width: 50%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  
+}
+
+
+.navbar .logo {
+  width: 50px;
+  margin-right: 20px;
+}
+
+.navbar .menu {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar .menu li {
+  display: inline-block;
+}
+
+.navbar .menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover {
+  color: #dda15e;
+  
+}
+
+.navbar .signup-btn {
+  padding: 10px 20px;
+  background-color: #dda15e;
+  margin-left: 20px; /* Ajoute un espace à gauche du bouton */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.navbar .signup-btn:hover {
+  background-color: #bc6c25;
+  
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 1024px) {
+  .concept-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-content,
+  .image-content {
+    width: 100%;
+    padding: 0;
+  }
+
+  .navbar {
+    width: 90%;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .navbar .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero {
+    font-size: 1.8rem;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .gallery {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .gallery img {
+    width: 90%;
+  }
+
+  .tarif-card {
+    width: 90%;
+  }
+
+  .help-buttons {
+    flex-direction: column;
+  }
+
+  iframe {
+    height: 300px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    width: 95%;
+    padding: 0.5rem;
+  }
+
+  .navbar .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    font-size: 1.4rem;
+  }
+
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .tarif-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .tarif-card p,
+  .tarif-card .price {
+    font-size: 0.95rem;
+  }
+
+  .help-section {
+    padding: 20px;
+    margin: 30px 10px;
+  }
+
+  .contact-btn,
+  .faq-btn {
+    width: 100%;
+  }
+
+  .navbar {
+    top: 0;
+    transform: none;
+    left: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .navbar .menu li a {
+    font-size: 1rem;
+  }}
+html {
+  scroll-behavior:smooth;
+}
+.fade-out {
+  opacity: 1;
+  transition: opacity 2s ease-out;
+}
+
+.fade-out.hide {
+  opacity: 0;
+}
+body.dark-mode {
+    background-color: #121212;
+    color: #eee;
+    
+}
+
+body.dark-mode input, 
+body.dark-mode label {
+    color: #eee;
+}
+
+body.dark-mode .container {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="email"],
+body.dark-mode input[type="date"],
+body.dark-mode input[type="number"] {
+    background-color: #333;
+    border-color: #baafaf;
+    color: #9d8989;
+}
+body.dark-mode textarea {
+    background-color: #333;
+    border-color: #baafaf;
+    color: #9d8989;
+}
+
+
+body.dark-mode input[type="submit"] {
+    background-color: #4CAF50;
+}
+
+body.dark-mode input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Conteneur des icônes */
+.darkModeToggle {
+  position:fixed;
+  top: 17px; /* Ajuste selon ta hauteur header/langue */
+  left: 91.5%;
+  right: 10%; /* À ajuster pour être bien sous le bouton langue */
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  z-index: 1100;
+  user-select: none;
+  font-size: 1.5rem;
+  color: #808376; /* Couleur initiale icônes */
+  transition: color 0.3s ease;
+}
+@media (max-width: 480px) {
+  .darkModeToggle{
+    left: 77%;
+  }
+}
+.darkModeToggle .icon:hover {
+  color: #dda15e;
+}
+
+.burger-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger-toggle span {
+  background: white;
+  height: 3px;
+  width: 25px;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Menu burger (liste verticale) */
+.burger-menu {
+  z-index: 9999; /* Très haut pour passer devant tout */
+  position: absolute;
+  display: none;
+  list-style: none;
+  flex-direction: column;
+  background: #333;
+  position: absolute;
+  top: 50px;
+  right: 60px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.burger-menu li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 0;
+}
+
+/* Affichage selon la largeur d’écran */
+@media (max-width: 768px) {
+  /* Cacher la navbar classique */
+  .navbar {
+    display: none;
+  }
+  
+  /* Afficher le bouton burger */
+  .burger-toggle {
+    display: flex;
+  }
+}
+
+
+@media (min-width: 769px) {
+  /* Cacher le menu burger et bouton burger sur grand écran */
+  .burger-toggle, .burger-menu {
+    display: none !important;
+  }
+  
+}
+.burger-toggle span {
+  background: white;
+  height: 3px;
+  width: 25px;
+  margin: 4px 0;
+  transition: 0.4s;}
+  

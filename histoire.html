@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Histoire - Kart Touristique Grasse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="histoire.css">
+      <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <style>
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+    <header>
+        <h1>Notre Histoire</h1>
+    </header>
+
+    <!-- Section Hero -->
+
+
+    <!-- Timeline avec anecdotes -->
+    <section class="timeline">
+        <div class="timeline-item fade">
+            <div class="timeline-content">
+                <h3>🌱 Les Racines </h3>
+                <p>Tout a commencé sur les bancs de notre école d’ingénieur, à Grasse, ville emblématique du parfum. Passionnés par l’innovation, l’écologie et l’envie de dynamiser notre territoire, nous avons eu l’idée de repenser le tourisme local.
+
+                    En découvrant les rues pittoresques et les trésors cachés de Grasse, nous nous sommes demandé : et si on proposait une manière fun, verte et accessible de les explorer ?
+                    
+                    C’est ainsi qu’est née l’idée du kart touristique électrique, un moyen original de faire découvrir la ville autrement.</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item fade">
+            <div class="timeline-content">
+                <h3>🚀 Le Lancement </h3>
+                <p>À cinq étudiants de première année de prépa ingénieur, on a uni nos forces pour concrétiser ce projet.
+
+                    Étude de faisabilité, réflexion sur les trajets, contact avec les institutions locales, maquette du site web, communication... Tout a été pensé et développé par nous, de A à Z, dans le cadre de notre projet annuel.
+                    
+                    Ce n’était pas juste un devoir : c’était un vrai défi entrepreneurial. Et aujourd’hui, on est fiers de présenter Kart Touristique Grasse comme un concept prêt à rouler !</p>
+            </div>
+        </div>
+
+        <div class="timeline-item fade">
+            <div class="timeline-content">
+                <h3>🎯 Notre Mission</h3>
+                <p>Offrir aux visiteurs une expérience inédite et durable, entre balade culturelle et plaisir ludique.
+
+                    Grâce à des karts 100 % électriques, silencieux et maniables, nous voulons montrer que tourisme peut rimer avec respect de l’environnement, inclusivité et innovation.
+                    
+                    Notre mission, c’est aussi de valoriser le patrimoine grassois en sortant des sentiers battus, tout en proposant une activité simple, abordable et adaptée à tous</p>
+            </div>
+        </div>
+
+        <div class="timeline-item fade">
+            <div class="timeline-content">
+                <h3>🔮 L'Avenir </h3>
+                <p>Ce projet n’est qu’un début. Nous rêvons de le faire évoluer, pourquoi pas jusqu’à un vrai service de location estivale, en partenariat avec la ville et ses acteurs.
+
+                    À court terme, notre ambition est de proposer plusieurs circuits à thème, intégrer une application mobile, et faire tester le concept à un public local.
+                    
+                    Et surtout, nous voulons continuer à apprendre, innover et porter des projets concrets qui ont du sens – pour Grasse, pour les visiteurs, et pour notre avenir d’ingénieurs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appel à l'action -->
+    <section class="cta">
+        <h2>Rejoignez-nous pour une aventure unique !</h2>
+        <button onclick="location.href='index.html'">Découvrez nos offres</button>
+    </section>
+
+    <footer>
+        &copy; 2025 Kart Touristique Grasse - ECAM EPMI x Grasse Campus
+    </footer>
+
+    <!-- Animation script -->
+    <script>
+        const fadeElements = document.querySelectorAll('.fade');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(el => observer.observe(el));
+    </script>
+    <script>
+  let currentLang = 'fr';
+
+  const content = {
+    fr: {
+      title: "Notre Histoire",
+      blocks: [
+        {
+          h3: "🌱 Les Racines",
+          p: `Tout a commencé sur les bancs de notre école d’ingénieur, à Grasse, ville emblématique du parfum. Passionnés par l’innovation, l’écologie et l’envie de dynamiser notre territoire, nous avons eu l’idée de repenser le tourisme local.
+
+En découvrant les rues pittoresques et les trésors cachés de Grasse, nous nous sommes demandé : et si on proposait une manière fun, verte et accessible de les explorer ?
+
+C’est ainsi qu’est née l’idée du kart touristique électrique, un moyen original de faire découvrir la ville autrement.`
+        },
+        {
+          h3: "🚀 Le Lancement",
+          p: `À cinq étudiants de première année de prépa ingénieur, on a uni nos forces pour concrétiser ce projet.
+
+Étude de faisabilité, réflexion sur les trajets, contact avec les institutions locales, maquette du site web, communication... Tout a été pensé et développé par nous, de A à Z, dans le cadre de notre projet annuel.
+
+Ce n’était pas juste un devoir : c’était un vrai défi entrepreneurial. Et aujourd’hui, on est fiers de présenter Kart Touristique Grasse comme un concept prêt à rouler !`
+        },
+        {
+          h3: "🎯 Notre Mission",
+          p: `Offrir aux visiteurs une expérience inédite et durable, entre balade culturelle et plaisir ludique.
+
+Grâce à des karts 100 % électriques, silencieux et maniables, nous voulons montrer que tourisme peut rimer avec respect de l’environnement, inclusivité et innovation.
+
+Notre mission, c’est aussi de valoriser le patrimoine grassois en sortant des sentiers battus, tout en proposant une activité simple, abordable et adaptée à tous`
+        },
+        {
+          h3: "🔮 L'Avenir",
+          p: `Ce projet n’est qu’un début. Nous rêvons de le faire évoluer, pourquoi pas jusqu’à un vrai service de location estivale, en partenariat avec la ville et ses acteurs.
+
+À court terme, notre ambition est de proposer plusieurs circuits à thème, intégrer une application mobile, et faire tester le concept à un public local.
+
+Et surtout, nous voulons continuer à apprendre, innover et porter des projets concrets qui ont du sens – pour Grasse, pour les visiteurs, et pour notre avenir d’ingénieurs.`
+        }
+      ],
+      cta: {
+        h2: "Rejoignez-nous pour une aventure unique !",
+        button: "Découvrez nos offres"
+      }
+    },
+
+    en: {
+      title: "Our Story",
+      blocks: [
+        {
+          h3: "🌱 The Roots",
+          p: `It all began on the benches of our engineering school in Grasse, the iconic city of perfume. Passionate about innovation, ecology, and revitalizing our region, we had the idea to rethink local tourism.
+
+While exploring the picturesque streets and hidden gems of Grasse, we asked ourselves: what if we offered a fun, green, and accessible way to explore them?
+
+That's how the idea of an electric tourist kart was born — a unique way to discover the city differently.`
+        },
+        {
+          h3: "🚀 The Launch",
+          p: `As five first-year engineering students, we joined forces to bring this project to life.
+
+Feasibility study, route planning, local outreach, website mock-up, communication... everything was imagined and developed by us, from A to Z, as part of our annual school project.
+
+It wasn't just an assignment: it was a true entrepreneurial challenge. And today, we’re proud to present Kart Touristique Grasse as a ready-to-roll concept!`
+        },
+        {
+          h3: "🎯 Our Mission",
+          p: `To offer visitors a unique and sustainable experience, combining cultural discovery and playful fun.
+
+Thanks to our 100% electric, quiet and maneuverable karts, we want to show that tourism can rhyme with environmental respect, inclusiveness, and innovation.
+
+Our mission is also to highlight the heritage of Grasse in an original way, through a simple, affordable, and inclusive activity.`
+        },
+        {
+          h3: "🔮 The Future",
+          p: `This project is just the beginning. We dream of turning it into a real summer rental service, in partnership with the city and local stakeholders.
+
+In the short term, our ambition is to offer themed circuits, integrate a mobile app, and test the concept with a local audience.
+
+Above all, we want to keep learning, innovating, and carrying out meaningful projects — for Grasse, for visitors, and for our future as engineers.`
+        }
+      ],
+      cta: {
+        h2: "Join us for a unique adventure!",
+        button: "See our offers"
+      }
+    }
+  };
+
+  function toggleLanguage() {
+    const langBtn = document.getElementById("lang-toggle");
+    const timelineItems = document.querySelectorAll(".timeline-item");
+    const title = document.querySelector("h1");
+    const ctaTitle = document.querySelector(".cta h2");
+    const ctaButton = document.querySelector(".cta button");
+
+    const lang = currentLang === 'fr' ? 'en' : 'fr';
+
+    // Mettre à jour le contenu
+    title.textContent = content[lang].title;
+    ctaTitle.textContent = content[lang].cta.h2;
+    ctaButton.textContent = content[lang].cta.button;
+
+    timelineItems.forEach((item, index) => {
+      const h3 = item.querySelector("h3");
+      const p = item.querySelector("p");
+      h3.textContent = content[lang].blocks[index].h3;
+      p.textContent = content[lang].blocks[index].p;
+    });
+
+    // Basculer l’état du bouton
+    currentLang = lang;
+    langBtn.textContent = lang === 'fr' ? 'EN' : 'FR';
+  }
+</script>
+<style>
+    body.dark-mode {
+    background-color: #121212;
+    color: #eee;
+    
+}  
+
+body.dark-mode input, 
+body.dark-mode label {
+    color: #eee;
+}
+
+body.dark-mode .container {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="email"],
+body.dark-mode input[type="password"] {
+    background-color: #333;
+    border-color: #555;
+    color: #eee;
+}
+
+body.dark-mode input[type="submit"] {
+    background-color: #4CAF50;
+}
+
+body.dark-mode input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Conteneur des icônes */
+.darkModeToggle {
+  position:fixed;
+  top: 10.5px; /* Ajuste selon ta hauteur header/langue */
+  left: 93%;
+  right: 10%; /* À ajuster pour être bien sous le bouton langue */
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  z-index: 1100;
+  user-select: none;
+  font-size: 1.5rem;
+  color: #808376; /* Couleur initiale icônes */
+  transition: color 0.3s ease;
+  
+}
+
+.darkModeToggle .icon:hover {
+  color: #dda15e;
+}
+  </style>
+  <script>
+    particlesJS('particles-js', {
+      "particles": {
+        "number": {
+          "value": 50,
+          "density": { "enable": true, "value_area": 800 }
+        },
+        "color": { "value": "#4CAF50" },
+        "shape": {
+          "type": "circle"
+        },
+        "opacity": {
+          "value": 0.6,
+          "random": false
+        },
+        "size": {
+          "value": 3,
+          "random": true
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": true,
+          "straight": false
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" }
+        },
+        "modes": {
+          "repulse": { "distance": 100 },
+          "push": { "particles_nb": 4 }
+        }
+      },
+      "retina_detect": true
+    });
+
+  </script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const moonIcon = darkModeToggle.querySelector('.moon');
+  const sunIcon = darkModeToggle.querySelector('.sun');
+
+  // Initialisation : appliquer le mode sombre si stocké
+  if (localStorage.getItem('dark-mode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+    moonIcon.style.display = 'none';
+    sunIcon.style.display = 'inline';
+  } else {
+    moonIcon.style.display = 'inline';
+    sunIcon.style.display = 'none';
+  }
+
+  darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    if (document.body.classList.contains('dark-mode')) {
+      moonIcon.style.display = 'none';
+      sunIcon.style.display = 'inline';
+      localStorage.setItem('dark-mode', 'enabled');
+    } else {
+      moonIcon.style.display = 'inline';
+      sunIcon.style.display = 'none';
+      localStorage.setItem('dark-mode', 'disabled');
+    }
+  });
+});
+
+  </script>
+</body>
+<button id="lang-toggle" onclick="toggleLanguage()" style="position: fixed; top: 10px; right: 10px; padding: 8px 12px; font-weight: bold; background-color: #fff; border: 1px solid #ccc; border-radius: 5px; cursor: pointer; z-index: 1000;">
+  EN
+</button>
+</div>
+      <div id="darkModeToggle" class="darkModeToggle">
+      <span class="icon moon">⏾</span>
+      <span class="icon sun" style="display:none;">☀︎</span>
+    </div>
+
+</html>
