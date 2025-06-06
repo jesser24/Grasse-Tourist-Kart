@@ -821,7 +821,7 @@ body.dark-mode input[type="submit"]:hover {
 .tarif-dot {
   width: 10px;
   height: 10px;
-  background-color: grey;
+  background-color: black;
   border-radius: 50%;
   transition: transform 0.3s, background-color 0.3s;
 }
