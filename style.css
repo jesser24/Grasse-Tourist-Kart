@@ -795,4 +795,19 @@ body.dark-mode input[type="submit"]:hover {
   width: 25px;
   margin: 4px 0;
   transition: 0.4s;}
-  
+    @media (max-width: 768px) {
+  .card-front img {
+    height: 300px; /* ou une autre valeur selon ton besoin */
+    width: 370px;
+    object-fit: cover;
+  }
+
+  .card {
+    height: auto; /* ou fixe, ex: 320px, si tu veux contrôler l’ensemble */
+  }
+
+  .card-front,
+  .card-back {
+    height: 300px; /* doit matcher l’image pour bien s’aligner */
+  }
+}
