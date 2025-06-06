@@ -513,27 +513,18 @@
     });
   </script>
 
-  <script>
-    window.addEventListener("load", function () {
-      // Initialisation de la hauteur de l'image à 850px au chargement
-      var hero = document.querySelector('.hero');
-      hero.style.height = '850px';  // Valeur initiale de la hauteur
+<script>
+const avisSlider = document.getElementById("avis-slider");
+const avisDots = document.querySelectorAll("#avis-dots .dot");
 
-      // Écouteur d'événements pour le défilement
-      window.addEventListener("scroll", function () {
-        var scrollPosition = window.scrollY; // Position actuelle du scroll
-
-        // Limite la hauteur à 600px et augmente jusqu'à 850px
-        var newHeight = 850 - scrollPosition;
-        if (newHeight < 600) {
-          newHeight = 600;  // Limite à 600px
-        }
-
-        // Applique la nouvelle hauteur à l'élément hero
-        hero.style.height = newHeight + 'px';
-      });
-    });
-  </script>
+avisSlider.addEventListener("scroll", () => {
+  const index = Math.round(avisSlider.scrollLeft / avisSlider.clientWidth);
+  avisDots.forEach(dot => dot.classList.remove("active"));
+  if (avisDots[index]) {
+    avisDots[index].classList.add("active");
+  }
+});
+</script>
   <script>
     const form = document.getElementById('bookingForm');
     const confirmationMsg = document.getElementById('confirmationMsg');
