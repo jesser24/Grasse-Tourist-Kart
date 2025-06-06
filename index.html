@@ -514,15 +514,43 @@
   </script>
 
 <script>
-const avisSlider = document.getElementById("avis-slider");
-const avisDots = document.querySelectorAll("#avis-dots .dot");
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.querySelector(".tarif-scroll-container");
+  const cards = container.children;
+  const dotsContainer = document.getElementById("tarif-dots");
 
-avisSlider.addEventListener("scroll", () => {
-  const index = Math.round(avisSlider.scrollLeft / avisSlider.clientWidth);
-  avisDots.forEach(dot => dot.classList.remove("active"));
-  if (avisDots[index]) {
-    avisDots[index].classList.add("active");
+  // Crée les dots selon le nombre de cartes
+  for (let i = 0; i < cards.length; i++) {
+    const dot = document.createElement("div");
+    dot.classList.add("tarif-dot");
+    if (i === 0) dot.classList.add("active");
+    dotsContainer.appendChild(dot);
   }
+
+  const dots = dotsContainer.querySelectorAll(".tarif-dot");
+
+  // Change le dot actif selon la position du scroll
+  container.addEventListener("scroll", () => {
+    const scrollLeft = container.scrollLeft;
+    const cardWidth = cards[0].offsetWidth + 32; // +32 si gap:2rem
+
+    const index = Math.round(scrollLeft / cardWidth);
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  });
+
+  // Permet de cliquer sur les dots pour scroller
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      const cardWidth = cards[0].offsetWidth + 32;
+      container.scrollTo({
+        left: i * cardWidth,
+        behavior: "smooth"
+      });
+    });
+  });
 });
 </script>
   <script>
