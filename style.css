@@ -821,12 +821,12 @@ body.dark-mode input[type="submit"]:hover {
   height: 10px;
   width: 10px;
   margin: 0 5px;
-  background-color: #bbb;
+  background-color:black;
   border-radius: 50%;
   transition: all 0.3s;
 }
 
 .tarif-dots .dot.active {
-  background-color: #333;
+  background-color: Geen;
   transform: scale(1.4);
 }
