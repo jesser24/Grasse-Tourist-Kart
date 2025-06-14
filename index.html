@@ -298,8 +298,8 @@
         Merci à nos professeurs pour leur patience et leur soutien constant, qui nous ont permis de mener à bien ce projet avec passion. 
       </p>
     </div>
-
   </div>
+  <div id="testimonial-dots"></div>
 </section>
 
 <!-- AOS JS (avant </body>) -->
@@ -711,5 +711,44 @@ tarifSlider.addEventListener("scroll", () => {
   }
 });
 </script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.querySelector(".testimonial-scroll-container");
+  const cards = container.children;
+  const dotsContainer = document.getElementById("testimonial-dots");
+
+  // Crée les dots selon le nombre de cartes
+  for (let i = 0; i < cards.length; i++) {
+    const dot = document.createElement("div");
+    dot.classList.add("testimonial-dot");
+    if (i === 0) dot.classList.add("active");
+    dotsContainer.appendChild(dot);
+  }
+
+  const dots = dotsContainer.querySelectorAll(".testimonial-dot");
+
+  container.addEventListener("scroll", () => {
+    const scrollLeft = container.scrollLeft;
+    const cardWidth = cards[0].offsetWidth + 20;
+
+    const index = Math.round(scrollLeft / cardWidth);
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  });
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      const cardWidth = cards[0].offsetWidth + 20;
+      container.scrollTo({
+        left: i * cardWidth,
+        behavior: "smooth"
+      });
+    });
+  });
+});
+</script>
+
 </body>
 </html>
