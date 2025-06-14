@@ -733,6 +733,19 @@ tarifSlider.addEventListener("scroll", () => {
       });
       dotsContainer.appendChild(dot);
     });
+// Déterminer quel avis est visible au chargement
+let initialIndex = 0;
+let minDistance = Infinity;
+cards.forEach((card, i) => {
+  const distance = Math.abs(card.offsetLeft - container.scrollLeft);
+  if (distance < minDistance) {
+    minDistance = distance;
+    initialIndex = i;
+  }
+});
+const dots = dotsContainer.querySelectorAll('.testimonial-dot');
+dots.forEach(dot => dot.classList.remove('active'));
+if (dots[initialIndex]) dots[initialIndex].classList.add('active');
 
     // Mettre à jour les dots selon le scroll
     container.addEventListener('scroll', () => {
