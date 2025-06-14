@@ -301,7 +301,7 @@
     </div>
 </div>
   <!-- Dots de navigation (visible sur mobile uniquement via CSS) -->
-  <div id="testimonial-dots"></div>
+  <div class="testimonial-dots" id="testimonialDots"></div>
 </section>
 
 <!-- AOS JS (avant </body>) -->
@@ -713,43 +713,38 @@ tarifSlider.addEventListener("scroll", () => {
   }
 });
 </script>
-  <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const container = document.querySelector(".testimonial-scroll-container");
-  const cards = container.children;
-  const dotsContainer = document.getElementById("testimonial-dots");
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const container = document.querySelector('#testimonials > div');
+    const cards = container.querySelectorAll('div');
+    const dotsContainer = document.getElementById('testimonialDots');
 
-  // Crée les dots selon le nombre de cartes
-  for (let i = 0; i < cards.length; i++) {
-    const dot = document.createElement("div");
-    dot.classList.add("testimonial-dot");
-    if (i === 0) dot.classList.add("active");
-    dotsContainer.appendChild(dot);
-  }
+    // Only apply on mobile
+    if (window.innerWidth > 768 || cards.length <= 1) return;
 
-  const dots = dotsContainer.querySelectorAll(".testimonial-dot");
-
-  container.addEventListener("scroll", () => {
-    const scrollLeft = container.scrollLeft;
-    const cardWidth = cards[0].offsetWidth + 20;
-
-    const index = Math.round(scrollLeft / cardWidth);
-
-    dots.forEach((dot, i) => {
-      dot.classList.toggle("active", i === index);
-    });
-  });
-
-  dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-      const cardWidth = cards[0].offsetWidth + 20;
-      container.scrollTo({
-        left: i * cardWidth,
-        behavior: "smooth"
+    // Create dots
+    cards.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.classList.add('testimonial-dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+        container.scrollTo({
+          left: i * container.clientWidth,
+          behavior: 'smooth',
+        });
       });
+      dotsContainer.appendChild(dot);
+    });
+
+    // Update active dot on scroll
+    container.addEventListener('scroll', () => {
+      const scrollLeft = container.scrollLeft;
+      const index = Math.round(scrollLeft / container.clientWidth);
+      const dots = dotsContainer.querySelectorAll('.testimonial-dot');
+      dots.forEach(dot => dot.classList.remove('active'));
+      if (dots[index]) dots[index].classList.add('active');
     });
   });
-});
 </script>
 
 </body>
