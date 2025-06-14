@@ -843,56 +843,7 @@ body.dark-mode input[type="submit"]:hover {
   color: black;
 }
 
-/* Scroll horizontal container */
-.testimonial-scroll-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding-bottom: 10px;
-  color: black;
-}
 
-/* Témoignage individuel */
-.testimonial-card {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  width: 220px;
-  flex-shrink: 0;
-  text-align: center;
-  color: black;
-}
-
-/* Image de profil */
-.testimonial-card img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-/* Nom */
-.testimonial-card h3 {
-  margin: 8px 0 5px;
-}
-
-/* Étoiles */
-.testimonial-card .stars {
-  color: #f5a623;
-  font-size: 18px;
-}
-
-/* Texte */
-.testimonial-card p {
-  font-style: italic;
-  font-size: 14px;
-  color: #555;
-}
 
 /* Conteneur des dots (invisible par défaut) */
 #testimonial-dots {
