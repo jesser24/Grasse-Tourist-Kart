@@ -832,10 +832,12 @@ body.dark-mode input[type="submit"]:hover {
   transform: scale(1.4);
 }}
 
-/* Dots container et dot par défaut */
+/* Par défaut (desktop : caché si besoin) */
+#testimonial-dots {
+  display: none;
+}
 
-
-/* Mobile/tablette */
+/* Version mobile/tablette */
 @media (max-width: 769px) {
   #testimonial-dots {
     display: flex;
@@ -850,6 +852,7 @@ body.dark-mode input[type="submit"]:hover {
     background-color: black;
     border-radius: 50%;
     transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
   }
 
   .testimonial-dot.active {
@@ -857,3 +860,4 @@ body.dark-mode input[type="submit"]:hover {
     transform: scale(1.4);
   }
 }
+
