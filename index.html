@@ -251,7 +251,7 @@
   <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: nowrap; overflow-x: auto;color: black;">
 
     <!-- Avis 1 -->
-    <div data-aos="fade-up" data-aos-delay="0" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
+    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
       <img src="jesser.png" alt="Profil Jesser" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
       <h3 style="margin: 8px 0 5px;">Jesser</h3>
       <div style="color: #f5a623; font-size: 18px;">★★★★☆</div>
@@ -261,7 +261,7 @@
     </div>
 
     <!-- Avis 2 -->
-    <div data-aos="fade-up" data-aos-delay="100" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
+    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
       <img src="ethan.png" alt="Profil Ethan" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
       <h3 style="margin: 8px 0 5px;">Ethan</h3>
       <div style="color: #f5a623; font-size: 18px;">★★★★★</div>
@@ -271,7 +271,7 @@
     </div>
 
     <!-- Avis 3 -->
-    <div data-aos="fade-up" data-aos-delay="200" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
+    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
       <img src="sohan.png" alt="Profil Sohan" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
       <h3 style="margin: 8px 0 5px;">Sohan</h3>
       <div style="color: #f5a623; font-size: 18px;">★★★☆☆</div>
@@ -281,7 +281,7 @@
     </div>
 
     <!-- Avis 4 -->
-    <div data-aos="fade-up" data-aos-delay="300" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
+    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
       <img src="mohamed.png" alt="Profil Mohamed" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
       <h3 style="margin: 8px 0 5px;">Mohamed</h3>
       <div style="color: #f5a623; font-size: 18px;">★★★★★</div>
@@ -291,7 +291,7 @@
     </div>
 
     <!-- Avis 5 -->
-    <div data-aos="fade-up" data-aos-delay="400" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
+    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="400" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
       <img src="thomas.png" alt="Profil Thomas" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
       <h3 style="margin: 8px 0 5px;">Thomas</h3>
       <div style="color: #f5a623; font-size: 18px;">★★★★☆</div>
@@ -716,34 +716,44 @@ tarifSlider.addEventListener("scroll", () => {
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const container = document.querySelector('#testimonials > div');
-    const cards = container.querySelectorAll('div');
+    const cards = container.querySelectorAll('.testimonial-card');
     const dotsContainer = document.getElementById('testimonialDots');
 
-    // Only apply on mobile
     if (window.innerWidth > 768 || cards.length <= 1) return;
 
-    // Create dots
+    dotsContainer.innerHTML = '';
+
     cards.forEach((_, i) => {
       const dot = document.createElement('div');
       dot.classList.add('testimonial-dot');
       if (i === 0) dot.classList.add('active');
       dot.addEventListener('click', () => {
-        container.scrollTo({
-          left: i * container.clientWidth,
-          behavior: 'smooth',
-        });
+        const scrollX = cards[i].offsetLeft;
+        container.scrollTo({ left: scrollX, behavior: 'smooth' });
       });
       dotsContainer.appendChild(dot);
     });
 
-    // Update active dot on scroll
+    // Mettre à jour les dots selon le scroll
     container.addEventListener('scroll', () => {
       const scrollLeft = container.scrollLeft;
-      const index = Math.round(scrollLeft / container.clientWidth);
+      let closestIndex = 0;
+      let minDistance = Infinity;
+      cards.forEach((card, i) => {
+        const distance = Math.abs(card.offsetLeft - scrollLeft);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIndex = i;
+        }
+      });
+
       const dots = dotsContainer.querySelectorAll('.testimonial-dot');
       dots.forEach(dot => dot.classList.remove('active'));
-      if (dots[index]) dots[index].classList.add('active');
+      if (dots[closestIndex]) dots[closestIndex].classList.add('active');
     });
+
+    // Forcer le scroll au début
+    container.scrollTo({ left: 0 });
   });
 </script>
 
