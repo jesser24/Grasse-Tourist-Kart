@@ -811,6 +811,7 @@ body.dark-mode input[type="submit"]:hover {
     height: 370px; /* doit matcher l’image pour bien s’aligner */
   }
 }
+@media (min-width: 769px) {
 .tarif-dots {
   display: flex;
   justify-content: center;
@@ -829,4 +830,4 @@ body.dark-mode input[type="submit"]:hover {
 .tarif-dot.active {
   background-color: light green;
   transform: scale(1.4);
-}
+}}
