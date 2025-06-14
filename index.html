@@ -713,48 +713,60 @@ tarifSlider.addEventListener("scroll", () => {
   }
 });
 </script>
-  <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const container = document.querySelector('#testimonials > div');
-  const cards = container.querySelectorAll('.testimonial-card');
-  const dotsContainer = document.getElementById('testimonialDots');
+ <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const container = document.querySelector('#testimonials > div');
+    const cards = container.querySelectorAll('.testimonial-card');
+    const dotsContainer = document.getElementById('testimonialDots');
 
-  if (window.innerWidth > 768 || cards.length <= 1) return;
+    if (window.innerWidth > 768 || cards.length <= 1) return;
 
-  dotsContainer.innerHTML = '';
+    dotsContainer.innerHTML = '';
 
-  cards.forEach((card, i) => {
-    const dot = document.createElement('div');
-    dot.classList.add('testimonial-dot');
-    if (i === 2) dot.classList.add('active'); // Activer la 3ᵉ dot au début
-    dot.addEventListener('click', () => {
-      cards[i].scrollIntoView({ behavior: 'smooth', inline: 'center' });
-    });
-    dotsContainer.appendChild(dot);
-  });
-
-  // Met à jour le dot actif quand on scrolle
-  container.addEventListener('scroll', () => {
-    let closestIndex = 0;
-    let minDistance = Infinity;
-
-    cards.forEach((card, i) => {
-      const distance = Math.abs(card.offsetLeft - container.scrollLeft);
-      if (distance < minDistance) {
-        minDistance = distance;
-        closestIndex = i;
-      }
+    cards.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.classList.add('testimonial-dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+        const scrollX = cards[i].offsetLeft;
+        container.scrollTo({ left: scrollX, behavior: 'smooth' });
+      });
+      dotsContainer.appendChild(dot);
     });
 
-    const dots = dotsContainer.querySelectorAll('.testimonial-dot');
-    dots.forEach(dot => dot.classList.remove('active'));
-    if (dots[closestIndex]) dots[closestIndex].classList.add('active');
-  });
-
-  // ✅ Scroll automatique sur le 3e avis au chargement
-  cards[2].scrollIntoView({ behavior: 'auto', inline: 'center' });
+// Déterminer quel avis est visible au chargement
+let initialIndex = 0;
+let minDistance = Infinity;
+cards.forEach((card, i) => {
+  const distance = Math.abs(card.offsetLeft - container.scrollLeft);
+  if (distance < minDistance) {
+    minDistance = distance;
+    initialIndex = i;
+  }
 });
-</script>
+const dots = dotsContainer.querySelectorAll('.testimonial-dot');
+dots.forEach(dot => dot.classList.remove('active'));
+if (dots[initialIndex]) dots[initialIndex].classList.add('active');
 
+
+    // Mettre à jour les dots selon le scroll
+    container.addEventListener('scroll', () => {
+      const scrollLeft = container.scrollLeft;
+      let closestIndex = 0;
+      let minDistance = Infinity;
+      cards.forEach((card, i) => {
+        const distance = Math.abs(card.offsetLeft - scrollLeft);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIndex = i;
+        }
+      });
+
+      const dots = dotsContainer.querySelectorAll('.testimonial-dot');
+      dots.forEach(dot => dot.classList.remove('active'));
+      if (dots[closestIndex]) dots[closestIndex].classList.add('active');
+    });
+  });
+</script>
 </body>
 </html>
