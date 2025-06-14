@@ -831,7 +831,7 @@ body.dark-mode input[type="submit"]:hover {
   background-color: light green;
   transform: scale(1.4);
 }}
-@media (max-width: 769px) {
+
 .testimonial-scroll-container {
   display: flex;
   gap: 20px;
@@ -893,4 +893,4 @@ body.dark-mode input[type="submit"]:hover {
 .testimonial-dot.active {
   background: #333;
 }
-  }
+  
