@@ -833,9 +833,7 @@ body.dark-mode input[type="submit"]:hover {
 }}
 
 /* Dots container et dot par défaut */
-#testimonial-dots {
-  display: none; /* visible uniquement sur mobile/tablette */
-}
+
 
 /* Mobile/tablette */
 @media (max-width: 769px) {
