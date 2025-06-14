@@ -832,9 +832,9 @@ body.dark-mode input[type="submit"]:hover {
 }
 
 .tarif-dot.active {
-  background: #333;
+  background: #219150;
   transform: scale(1.2);
-}}
+}
 
 @media (max-width: 768px) {
   #testimonials > div {
@@ -870,4 +870,10 @@ body.dark-mode input[type="submit"]:hover {
     transform: scale(1.2);
   }
 }
-
+@media (max-width: 768px) {
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
