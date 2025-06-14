@@ -843,18 +843,31 @@ body.dark-mode input[type="submit"]:hover {
   color: black;
 }
 
-/* Cartes de témoignages */
+/* Scroll horizontal container */
+.testimonial-scroll-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+  color: black;
+}
+
+/* Témoignage individuel */
 .testimonial-card {
   background: white;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   width: 220px;
   flex-shrink: 0;
   text-align: center;
   color: black;
 }
 
+/* Image de profil */
 .testimonial-card img {
   width: 70px;
   height: 70px;
@@ -863,26 +876,30 @@ body.dark-mode input[type="submit"]:hover {
   margin-bottom: 10px;
 }
 
+/* Nom */
 .testimonial-card h3 {
   margin: 8px 0 5px;
 }
 
+/* Étoiles */
 .testimonial-card .stars {
   color: #f5a623;
   font-size: 18px;
 }
 
+/* Texte */
 .testimonial-card p {
   font-style: italic;
   font-size: 14px;
   color: #555;
 }
 
-/* Dots de navigation – visibles sur mobile */
+/* Conteneur des dots (invisible par défaut) */
 #testimonial-dots {
-  display: none; /* visible uniquement via media query */
+  display: none;
 }
 
+/* Dot de navigation */
 .testimonial-dot {
   width: 10px;
   height: 10px;
@@ -892,12 +909,13 @@ body.dark-mode input[type="submit"]:hover {
   transition: background 0.3s, transform 0.3s;
 }
 
+/* Dot actif */
 .testimonial-dot.active {
   background: #333;
   transform: scale(1.4);
 }
 
-/* Responsive : afficher les dots uniquement en dessous de 769px */
+/* Responsive : affiche les dots sur petit écran */
 @media (max-width: 769px) {
   #testimonial-dots {
     display: flex;
