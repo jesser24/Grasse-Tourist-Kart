@@ -845,10 +845,7 @@ body.dark-mode input[type="submit"]:hover {
 
 
 
-/* Conteneur des dots (invisible par défaut) */
-#testimonial-dots {
-  display: none;
-}
+
 
 /* Dot de navigation */
 .testimonial-dot {
