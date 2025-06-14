@@ -836,19 +836,24 @@ body.dark-mode input[type="submit"]:hover {
   #testimonials > div {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
 
   #testimonials > div > div {
     scroll-snap-align: center;
   }
 
+  /* Style du conteneur de dots */
   .testimonial-dots {
     display: flex;
     justify-content: center;
-    margin-top: 15px;
+    align-items: center;
+    flex-direction: row; /* assure que c’est horizontal */
     gap: 8px;
+    margin-top: 15px;
   }
 
+  /* Style de chaque dot */
   .testimonial-dot {
     width: 10px;
     height: 10px;
