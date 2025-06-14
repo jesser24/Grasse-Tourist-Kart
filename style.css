@@ -832,20 +832,6 @@ body.dark-mode input[type="submit"]:hover {
   transform: scale(1.4);
 }}
 
-/* Conteneur scroll horizontal */
-.testimonial-scroll-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding-bottom: 10px;
-  color: black;
-}
-
-
-
-
 
 /* Dot de navigation */
 .testimonial-dot {
