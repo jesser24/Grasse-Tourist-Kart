@@ -265,6 +265,16 @@ body.dark-mode input[type="submit"]:hover {
 .darkModeToggle .icon:hover {
   color: #dda15e;
 }
+@media (max-width:769px) {
+  .darkModeToggle {
+  position:fixed;
+  top: 10.5px; /* Ajuste selon ta hauteur header/langue */
+  left: 80%;
+  right: 10%; /* À ajuster pour être bien sous le bouton langue */
+  display: flex;
+  gap: 10px;
+  
+}}
   </style>
   <script>
     particlesJS('particles-js', {
