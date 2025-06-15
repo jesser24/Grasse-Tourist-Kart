@@ -26,8 +26,7 @@
 </head>
 
 <body>
-  <div id="particles-js"></div>
-
+  
   <header>
   <h1 id="title">Kart Touristique Grasse</h1>
   <div>
@@ -46,14 +45,17 @@
       
     </ul>
     </div>
-  <div class="header-buttons">
-    <button onclick="switchLang()" id="langBtn">EN</button>
-
+    
+<div class="header-buttons">
+  <button onclick="switchLang()" id="langBtn">EN</button>
+  <div id="darkModeToggle" class="darkModeInline">
+    <span class="icon moon">☾</span>
+    <span class="icon sun" style="display:none;">☀︎</span>
   </div>
-      <div id="darkModeToggle" class="darkModeToggle">
-      <span class="icon moon">☾</span>
-      <span class="icon sun" style="display:none;">☀︎</span>
-    </div>
+</div>
+
+
+  
 </header>
 
 </div>
@@ -157,7 +159,11 @@
   </section>
 
   <section class="gallery fade">
-     <img src="icon1.png" alt="Retourner les cartes" class="global-flip-icon">
+    <div class="flip-instruction-container" id="flipInstructionText">
+   Appuyer pour tourner les images
+</div>
+
+    <img src="icon1.png" alt="Icone" class="global-flip-icon">
     <div class="card">
       <div class="card-inner">
         <div class="card-front">
@@ -253,15 +259,14 @@
   <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: nowrap; overflow-x: auto;color: black;">
 
     <!-- Avis 1 -->
-     <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
-      <img src="jesser.png" alt="Profil Jesser" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
-      <h3 style="margin: 8px 0 5px;">Jesser</h3>
-      <div style="color: #f5a623; font-size: 18px;">★★★★☆</div>
+     <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
+      <img src="sohan.png" alt="Profil Sohan" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
+      <h3 style="margin: 8px 0 5px;">Sohan</h3>
+      <div style="color: #f5a623; font-size: 18px;">★★★★★</div>
       <p style="font-style: italic; font-size: 14px; color: #555;">
-        Nous sommes reconnaissants envers nos professeurs qui ont su transmettre leur savoir avec passion et ont rendu cette aventure éducative mémorable. 
+        Notre école est un lieu d’inspiration et d’opportunités, où chaque défi est une chance d’apprendre, merci à tous nos professeurs de nous guider.
       </p>
     </div>
-
     <!-- Avis 2 -->
     <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
       <img src="ethan.png" alt="Profil Ethan" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
@@ -274,15 +279,14 @@
 
 
     <!-- Avis 3 -->
-    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
-      <img src="sohan.png" alt="Profil Sohan" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
-      <h3 style="margin: 8px 0 5px;">Sohan</h3>
-      <div style="color: #f5a623; font-size: 18px;">★★★☆☆</div>
+<div class="testimonial-card" data-aos="fade-up" data-aos-delay="0" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
+      <img src="jesser.png" alt="Profil Jesser" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
+      <h3 style="margin: 8px 0 5px;">Jesser</h3>
+      <div style="color: #f5a623; font-size: 18px;">★★★★★</div>
       <p style="font-style: italic; font-size: 14px; color: #555;">
-        Notre école est un lieu d’inspiration et d’opportunités, où chaque défi est une chance d’apprendre, merci à tous nos professeurs de nous guider.
+        Nous sommes reconnaissants envers nos professeurs qui ont su transmettre leur savoir avec passion et ont rendu cette aventure éducative mémorable. 
       </p>
     </div>
-
     <!-- Avis 4 -->
     <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
       <img src="mohamed.png" alt="Profil Mohamed" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
@@ -297,7 +301,7 @@
     <div class="testimonial-card" data-aos="fade-up" data-aos-delay="400" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; flex-shrink: 0; text-align: center;">
       <img src="thomas.png" alt="Profil Thomas" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
       <h3 style="margin: 8px 0 5px;">Thomas</h3>
-      <div style="color: #f5a623; font-size: 18px;">★★★★☆</div>
+      <div style="color: #f5a623; font-size: 18px;">★★★★★</div>
       <p style="font-style: italic; font-size: 14px; color: #555;">
         Merci à nos professeurs pour leur patience et leur soutien constant, qui nous ont permis de mener à bien ce projet avec passion. 
       </p>
@@ -389,6 +393,8 @@
         formMessagePlaceholder: "Message ou demande spéciale",
         formSubmitBtn: "Envoyer",
         formConfirmationMsg: "Merci pour votre réservation !",
+        ins:"Appuyer pour tourner les images",
+        ins2:"Appuyer une autre fois pour retourner les images"
       },
       en: {
         title: "Tourist Kart Grasse",
@@ -446,6 +452,8 @@
         formMessagePlaceholder: "Message or special request",
         formSubmitBtn: "Send",
         formConfirmationMsg: "Thank you for your reservation !",
+        ins:"Tap to flip the images",
+        ins2:"Tap again to flip the images back"
       }
     };
 
@@ -485,7 +493,8 @@
       document.getElementById("people").placeholder = t.formPeoplePlaceholder;
       document.getElementById("message").placeholder = t.formMessagePlaceholder;
       document.getElementById("submitBtn").textContent = t.formSubmitBtn;
-      document.getElementById("confirmationMsg").textContent = t.formConfirmationMsg;
+      document.getElementById("flipInstructionText").textContent = t.ins;
+
 
       for (let i = 1; i <= 4; i++) {
         document.getElementById(`cardTitle${i}`).textContent = t[`cardTitle${i}`];
@@ -558,17 +567,23 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("load", function () {
       // Initialisation de la hauteur de l'image à 850px au chargement
       var hero = document.querySelector('.hero');
-      hero.style.height = '850px';  // Valeur initiale de la hauteur
+      // Définir une hauteur initiale plus adaptée au mobile
+if (window.innerWidth < 768) {
+  hero.style.height = '250px';
+} else {
+  hero.style.height = '850px';
+}
+
 
       // Écouteur d'événements pour le défilement
       window.addEventListener("scroll", function () {
         var scrollPosition = window.scrollY; // Position actuelle du scroll
 
         // Limite la hauteur à 600px et augmente jusqu'à 850px
-        var newHeight = 850 - scrollPosition;
-        if (newHeight < 600) {
-          newHeight = 600;  // Limite à 600px
-        }
+        var newHeight = window.innerWidth < 768
+  ? Math.max(250, 350 - scrollPosition)  // version mobile
+  : Math.max(600, 850 - scrollPosition); // version desktop
+
 
         // Applique la nouvelle hauteur à l'élément hero
         hero.style.height = newHeight + 'px';
@@ -785,6 +800,46 @@ if (dots[initialIndex]) dots[initialIndex].classList.add('active');
       }, 400); // durée de l'animation = 0.4s
     });
   });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const icon = document.querySelector('.global-flip-icon');
+  const darkModeToggle = document.getElementById('darkModeToggle');
+
+  function updateIconForTheme() {
+    if (document.body.classList.contains('dark-mode')) {
+      icon.src = 'icon2.png'; // icône blanche
+    } else {
+      icon.src = 'icon1.png'; // icône noire
+    }
+  }
+
+  // Changement initial (au chargement)
+  updateIconForTheme();
+
+  // Changement à chaque clic sur le bouton de mode
+  darkModeToggle.addEventListener('click', () => {
+    setTimeout(updateIconForTheme, 100); // petit délai pour que la classe 'dark-mode' soit bien appliquée
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const instructionBox = document.getElementById('flipInstructionText');
+  const cards = document.querySelectorAll('.card');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      setTimeout(() => {
+        if (card.classList.contains('flipped')) {
+          instructionBox.textContent = translations[currentLang].ins2; 
+        } else {
+          instructionBox.textContent = translations[currentLang].ins; 
+        }
+      }, 100); // on attend que l'effet de flip ait eu lieu
+    });
+  });
+});
 </script>
 
 </body>
